@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+</body>
+</html>
+
+<!-- // STRING FUNCTIONS
+
+1. charAt(int index) - Returns the character at the specified index (position) - char
+2. codePointAt(int index) - Returns the Unicode of the character at the specified index - int
+3. codePointBefore(int index) - Returns the Unicode of the character before the specified index - int
+4. codePointCount(int beginIndex, int endIndex) - Returns the number of Unicode values found in a string between beginIndex (inclusive) and endIndex (exclusive) - int
+5. compareTo(String anotherString) - Compares two strings lexicographically - int
+6. compareToIgnoreCase(String anotherString) - Compares two strings lexicographically, ignoring case differences - int
+7. concat(String str) - Appends a string to the end of another string - String
+8. contains(CharSequence s) - Checks whether a string contains a sequence of characters - boolean
+10. contentEquals(StringBuffer sb) - Checks whether a string contains the exact same sequence of characters of the specified CharSequence or StringBuffer - boolean
+11. copyValueOf(char[] data) - Returns a String that represents the characters of the character array - String
+12. endsWith(String suffix) - Checks whether a string ends with the specified character(s) - boolean
+13. equals(Object obj) - Compares two strings. Returns true if the strings are equal, and false if not - boolean
+14. equalsIgnoreCase(String anotherString) - Compares two strings, ignoring case considerations - boolean
+15. format(Locale locale, String format, Object... args) - Returns a formatted string using the specified locale, format string, and arguments - String
+16. getBytes() - Converts a string into an array of bytes using the platform's default character encoding - byte[]
+17. getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) - Copies characters from a string to a specified array of chars - void
+18. hashCode() - Returns the hash code of a string - int
+19. indexOf(int ch) - Returns the position of the first found occurrence of the character (ch) in a string - int
+20. indexOf(String str) - Returns the position of the first found occurrence of the specified substring in a string - int
+21. intern() - Returns the canonical representation for the string object. Multiple calls to intern for the same string object will return the same reference - String
+22. isEmpty() - Checks whether a string is empty or not - boolean
+23. join(CharSequence delimiter, CharSequence... elements) - Joins one or more strings with a specified delimiter - String
+24. lastIndexOf(int ch) - Returns the position of the last found occurrence of the character (ch) in a string - int
+25. lastIndexOf(String str) - Returns the position of the last found occurrence of the specified substring in a string - int
+26. length() - Returns the length of a specified string - int
+27. matches(String regex) - Searches a string for a match against a regular expression, and returns true if the entire string matches - boolean
+28. offsetByCodePoints(int index, int codePointOffset) - Returns the index within this String that is offset from the given index by codePointOffset code points - int
+29. regionMatches(int offset, String other, int otherOffset, int len) - Tests if two string regions are equal - boolean
+30. replace(char oldChar, char newChar) - Searches a string for a specified value, and returns a new string where the specified values are replaced - String
+31. replaceAll(String regex, String replacement) - Replaces each substring of this string that matches the given regular expression with the given replacement - String
+32. replaceFirst(String regex, String replacement) - Replaces the first occurrence of a substring that matches the given regular expression with the given replacement - String
+33. split(String regex) - Splits a string into an array of substrings based on the provided delimiter regex - String[]
+34. startsWith(String prefix) - Checks whether a string starts with specified characters - boolean
+35. subSequence(int start, int end) - Returns a new character sequence that is a subsequence of this sequence - CharSequence
+36. substring(int beginIndex, int endIndex) - Returns a new string which is the substring of a specified string - String
+37. toCharArray() - Converts this string to a new character array - char[]
+38. toLowerCase() - Converts a string to lower case letters - String
+39. toString() - Returns
+
+//////////******DATE AND TIME FUNCTIONS*******////////////
+
+
+// import java.time.LocalDate;
+// public class DateAndTime {
+//     public static void main(String[] args) {
+//         LocalDate obj = LocalDate.now();
+//         System.out.println(obj);
+//     }
+// }
+
+
+
+// import java.time.LocalTime;
+// public class DateAndTime {
+//     public static void main(String[] args) {
+//         LocalTime obj = LocalTime.now();
+//         System.out.println(obj);
+//     }
+// }
+
+
+
+// import java.time.*;
+// public class DateAndTime {
+//     public static void main(String[] args) {
+//         LocalDateTime obj = LocalDateTime.now();
+//         System.out.println(obj);
+//     }
+// }
+
+
+
+
+// import java.time.*;
+// import java.time.format.DateTimeFormatter;
+// public class DateAndTime {
+//     public static void main(String[] args) {
+//         LocalDateTime obj = LocalDateTime.now();
+//         System.out.println("Before Formatting: " + obj);
+//         DateTimeFormatter obj1 = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+//         String formattedDate = obj.format(obj1);
+//         System.out.println("After Formatting: " + formattedDate);
+//     }
+// }
+
+
+
+// import java.time.LocalDate;
+// import java.time.format.DateTimeFormatter;
+// public class DateAndTime {
+//     public static void main(String[] args) {
+//         LocalDate obj = LocalDate.now();
+//         System.out.println("Before Formatting: " + obj);
+//         DateTimeFormatter obj1 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//         DateTimeFormatter obj2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//         DateTimeFormatter obj3 = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+//         DateTimeFormatter obj4 = DateTimeFormatter.ofPattern("E, MMM dd yyyy");
+//         String formattedDate = obj.format(obj1);
+//         String formattedDate1 = obj.format(obj2);
+//         String formattedDate2 = obj.format(obj3);
+//         String formattedDate3 = obj.format(obj4);
+//         System.out.println("\nAfter Formatting: " + formattedDate);
+//         System.out.println("After Formatting: " + formattedDate1);
+//         System.out.println("After Formatting: " + formattedDate2);
+//         System.out.println("After Formatting: " + formattedDate3);
+//     }
+// }
+
+
+
+
+// import java.time.LocalDate;
+// public class DateAndTime {
+//     public static void main(String[] args) {
+//         LocalDate today = LocalDate.now();
+//         LocalDate worldCup = LocalDate.of(2022, 12, 18);
+//         int years = today.getYear() - worldCup.getYear();
+//         System.out.println("Passed years: " + years);
+//     }
+// }
+
+
+
+
+// import java.time.*;
+// public class DateAndTime {
+//     public static void main(String[] args) {
+//         // LocalDate today = LocalDate.now();
+//         LocalDate worldCup = LocalDate.of(2022, 02, 18);
+//         DayOfWeek day = worldCup.getDayOfWeek();
+//         System.out.println(day);
+//         // Period period = Period.between(today, worldCup);
+//         // System.out.println(period);
+//     }
+// }
+
+
+
+
+// import java.time.*;
+// public class DateAndTime {
+//     public static void main(String[] args) {
+//         LocalDate today = LocalDate.now();
+//         System.out.println(today.minusYears(1));
+//         System.out.println(today.minusMonths(1));
+//         System.out.println(today.minusDays(1));
+//         System.out.println(today.plusYears(2));
+//         System.out.println(today.plusMonths(2));
+//         System.out.println(today.plusDays(2));
+//     }
+// }
+
+
+
+
+
+// import java.util.Calendar;
+
+// public class DateAndTime {
+//     public static void main(String[] args) {
+//         int year = 2024;
+//         int month = 0;
+//         int date = 29;
+//         Calendar cal = Calendar.getInstance();
+//         cal.clear();
+//         System.out.println();
+//         cal.set(Calendar.YEAR, year);
+//         cal.set(Calendar.MONTH, month);
+//         cal.set(Calendar.DATE, date);
+//         System.out.println(cal.getTime());
+//     }
+// } 
+
+-->
