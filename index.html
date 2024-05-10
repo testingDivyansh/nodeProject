@@ -2255,4 +2255,48 @@ int main(){
 	return 0;
 }
 
+FIND SIZE OF EACH FILE IN A DIRECTORY *************
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <dirent.h>
+#include <sys/stat.h>
+
+int main() {
+    DIR *d;
+    struct dirent *entry;
+    struct stat file_info;
+
+    // Open the directory
+    d = opendir("etp");
+
+    // Check if directory opening was successful
+    if (d != NULL) {
+        printf("Printing contents of etp directory:\n");
+
+        // Read directory entries
+        while ((entry = readdir(d)) != NULL) {
+            // Construct the file path
+            char file_path[1024];
+            snprintf(file_path, sizeof(file_path), "etp/%s", entry->d_name);
+
+            // Get file info
+            if (stat(file_path, &file_info) == 0) {
+                printf("%s - %ld bytes\n", entry->d_name, (long)file_info.st_size);
+            } else {
+                printf("Error getting info for %s\n", entry->d_name);
+            }
+        }
+
+        // Close the directory
+        closedir(d);
+    } else {
+        // Print an error message if the directory couldn't be opened
+        perror("Unable to open directory");
+        return 1; // Exit with error status
+    }
+
+    return 0; // Exit normally
+}
+
 -->
